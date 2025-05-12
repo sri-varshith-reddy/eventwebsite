@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate")%>
+<style>
+    body{
+     color: #008080;
+    }
+  </style>
+  
+<body>
+    <div class="row">
+    <div class="col-8 offset-2" >
+    <h1>Create a new Listing:</h1>
+    <form method="post" action="/listing" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3 mt-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="new[title]" type="text" placeholder="Add a catchy title..  " class="form-control" required>
+        <div class="invalid-feedback">Please enter valid title</div>    
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea  name="new[description]" type="textarea" placeholder="description" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please enter Description</div> 
+        </div>
+            <!-- <div class="mb-3">
+                <label for="image" class="form-label">Image-Link</label>
+                <input name="new[image][url]" type="text" placeholder="ImageURL eg: https://...." class="form-control" required>
+                <div class="invalid-feedback">Invalid image URL</div> 
+            </div> -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="new[image]" type="file" class="form-control" required>
+            <div class="invalid-feedback">Invalid image URL</div> 
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="new[category]" class="form-select" required>
+              <option value="">-- Select Category --</option>
+              <option value="Hackathons">Hackathons</option>
+              <option value="CodingContests">CodingContests</option>
+              <option value="Workshops">Workshops</option>
+              <option value="AI/MLSummits">AI/MLSummits</option>
+              <option value="Music">Music</option>
+              <option value="Dance">Dance</option>
+              <option value="Drama">Drama</option>
+              <option value="FashionShows">FashionShows</option>
+              <option value="Football">Football</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Esports">Esports</option>
+              <option value="Marathons">Marathons</option>
+              <option value="Guest Lectures">Guest Lectures</option>
+              <option value="ResearchTalks">ResearchTalks</option>
+              <option value="StartupMeets">StartupMeets</option>
+              <option value="CollegeFests">CollegeFests</option>
+              <option value="DepartmentDays">DepartmentDays</option>
+            </select>
+            <div class="invalid-feedback">Please select a category</div>
+          </div>
+          
+        <div class="row">
+            <div class="mb-3 col-12 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input name="new[price]" type="number" placeholder="eg:1200" class="form-control" required>
+                <div class="invalid-feedback">Please enter valid price</div> 
+            </div>
+        
+            <div class="mb-3 col-12 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input name="new[country]" type="text" placeholder="India" class="form-control" required>
+                <div class="invalid-feedback">Not an Country</div> 
+            </div> 
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="new[location]" type="text" placeholder="eg:Hyderbad,Telangana.." class="form-control" required>
+            <div class="invalid-feedback">Invalid location</div> 
+        </div>  
+        <button class="btn btn-dark add-new mt-3">Add</button>
+    </form>
+</div>
+
+</div>
+</body>

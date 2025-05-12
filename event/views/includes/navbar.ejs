@@ -1,0 +1,29 @@
+
+</style>
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"><i class="fa-solid fa-compass"></i>  CampusPulse </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">Explore</a>
+        <a class="nav-link" href="/listing/about">About Us</a> <!-- Added About Us link -->
+        <a class="nav-link" href="/listing/contact">Contact</a> <!-- Added Contact link -->
+        <a class="nav-link" href="/listing/faq">FAQ</a> <!-- Added FAQ link -->
+      </div>
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link" href="/listing/new">Add new Listing</a>
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/login"><b>Log-in</b></a>
+          <a class="nav-link" href="/signup"><b>Sign-up</b></a>
+        <% } %>
+        <% if (currUser) { %>
+          <a class="nav-link" href="/logout">Log-out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

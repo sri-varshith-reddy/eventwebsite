@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+
+<!-- Contact Section -->
+<section class="contact-container">
+  <h1>Get in Touch with <span class="highlight">Srivarshith Reddy</span></h1>
+  <p class="intro-text">
+    Whether it’s feedback, collaboration ideas, or just a friendly hello — I’d love to hear from you!
+  </p>
+
+  <div class="contact-grid">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> <a href="mailto:srivarshith6@gmail.com">srivarshith6@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+919392840517">+91 93928 40517</a></p>
+      <p><strong>Location:</strong> Hyderabad, India</p>
+
+      <!-- Optional Socials -->
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/srivarshith" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/srivarshith" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" action="/listing/contact" method="POST" onsubmit="return showSuccessAlert();">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- JS Alert -->
+<script>
+  function showSuccessAlert() {
+    alert("Thanks for reaching out! I’ll get back to you soon.");
+    return true;
+  }
+</script>
+
+<!-- Styling -->

@@ -1,0 +1,118 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="full-width-banner">
+  <div class="banner-text">
+    Semester’s On. Your Journey Awaits.<br>Live College Life!
+  </div>
+</div>
+
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Event Categories</h1>
+      <div class="categories-container">
+
+        <!-- Tech & Innovation -->
+        <div class="category-container">
+          <div class="category-circle" style="background-image: url('../../images/tech.jpg');" data-target="panel-tech"></div>
+          <div class="category-name">Tech &amp; Innovation</div>
+          <div class="subcategory-panel" id="panel-tech">
+            <a href="/listing?category=Hackathons" class="subcategory-item"><i class="fa-solid fa-laptop-code"></i><span>Hackathons</span></a>
+            <a href="/listing?category=CodingContests" class="subcategory-item"><i class="fa-solid fa-terminal"></i><span>Coding Contests</span></a>
+            <a href="/listing?category=Workshops" class="subcategory-item"><i class="fa-solid fa-chalkboard-teacher"></i><span>Workshops</span></a>
+            <a href="/listing?category=AI/MLSummits" class="subcategory-item"><i class="fa-solid fa-robot"></i><span>AI/ML Summits</span></a>
+          </div>
+        </div>
+
+        <!-- Cultural Events -->
+        <div class="category-container">
+          <div class="category-circle" style="background-image: url('../../images/cultural-event.jpg');" data-target="panel-cultural"></div>
+          <div class="category-name">Cultural Events</div>
+          <div class="subcategory-panel" id="panel-cultural">
+            <a href="/listing?category=Music" class="subcategory-item"><i class="fa-solid fa-music"></i><span>Music</span></a>
+            <a href="/listing?category=Dance" class="subcategory-item"><i class="fas fa-compact-disc"></i><span>Dance</span></a>
+            <a href="/listing?category=Drama" class="subcategory-item"><i class="fa-solid fa-theater-masks"></i><span>Drama</span></a>
+            <a href="/listing?category=FashionShows" class="subcategory-item"><i class="fa-solid fa-tshirt"></i><span>Fashion Shows</span></a>
+          </div>
+        </div>
+
+        <!-- Sports & Esports -->
+        <div class="category-container">
+          <div class="category-circle" style="background-image: url('../../images/sports.jpg');" data-target="panel-sports"></div>
+          <div class="category-name">Sports &amp; Esports</div>
+          <div class="subcategory-panel" id="panel-sports">
+            <a href="/listing?category=Football" class="subcategory-item"><i class="fa-solid fa-football-ball"></i><span>Football</span></a>
+            <a href="/listing?category=Cricket" class="subcategory-item"><i class="fa-solid fa-baseball-ball"></i><span>Cricket</span></a>
+            <a href="/listing?category=Esports" class="subcategory-item"><i class="fa-solid fa-gamepad"></i><span>Esports</span></a>
+            <a href="/listing?category=Marathons" class="subcategory-item"><i class="fa-solid fa-person-running"></i><span>Marathons</span></a>
+          </div>
+        </div>
+
+        <!-- Academic & Networking -->
+        <div class="category-container">
+          <div class="category-circle" style="background-image: url('../../images/networking.jpg');" data-target="panel-academic"></div>
+          <div class="category-name">Academic &amp; Networking</div>
+          <div class="subcategory-panel" id="panel-academic">
+            <a href="/listing?category=Guest Lectures" class="subcategory-item"><i class="fa-solid fa-chalkboard-teacher"></i><span>Guest Lectures</span></a>
+            <a href="/listing?category=ResearchTalks" class="subcategory-item"><i class="fa-solid fa-lightbulb"></i><span>Research Talks</span></a>
+            <a href="/listing?category=StartupMeets" class="subcategory-item"><i class="fa-solid fa-briefcase"></i><span>Startup Meets</span></a>
+          </div>
+        </div>
+
+        <!-- Festivals & Annual Days -->
+        <div class="category-container">
+          <div class="category-circle" style="background-image: url('../../images/annualday.jpg');" data-target="panel-festivals"></div>
+          <div class="category-name">Festivals &amp; Annual Days</div>
+          <div class="subcategory-panel" id="panel-festivals">
+            <a href="/listing?category=CollegeFests" class="subcategory-item"><i class="fa-solid fa-graduation-cap"></i><span>College Fests</span></a>
+            <a href="/listing?category=DepartmentDays" class="subcategory-item"><i class="fa-solid fa-building"></i><span>Department Days</span></a>
+            <a href="/listing?category=Workshops" class="subcategory-item"><i class="fa-solid fa-chalkboard-teacher"></i><span>Workshops</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <style>
+      .card-title,
+      .card-text,
+      .tax-info,
+      .form-check-label {
+        color: #008080;
+      }
+    
+      /* Optional: You can also include hover effects if needed */
+      .cardlink:hover .card-title,
+      .cardlink:hover .card-text {
+        color: #006666; /* darker teal on hover */
+        text-decoration: none;
+      }
+    </style>
+    
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Show GST Info</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4">
+    <% for(let l of list) { %>
+      <a href="/listing/<%= l._id %>" class="cardlink">   
+        <div class="col mb-4">
+          <div class="listing-card">
+            <img class="card-img-top" src="<%= l.image.url %>" alt="Image-index">
+            <div class="card-body">
+              <h5 class="card-title"><b><%= l.title %></b></h5>
+              <p class="card-text">
+                &#8377;<%= l.price.toLocaleString("en-IN") %> 
+                <span class="tax-info">&nbsp;+10% GST</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+</div>
